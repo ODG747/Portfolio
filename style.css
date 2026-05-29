@@ -1,11 +1,4 @@
-/* ================================================================
-   PORTFOLIO — [Votre Prénom Nom] — Game Dev
-   Style principal : dark mode, typographie Syne + Space Mono
-   ================================================================ */
-
-/* ── 1. VARIABLES & RESET ──────────────────────────────────────── */
 :root {
-  /* Couleurs */
   --bg:           #080810;
   --bg-alt:       #0d0d18;
   --surface:      #12121f;
@@ -21,33 +14,27 @@
   --text-muted:   #7a7a9a;
   --text-faint:   #3a3a5a;
 
-  /* Typographie */
   --font-display: 'Syne', sans-serif;
   --font-mono:    'Space Mono', monospace;
 
-  /* Espacements */
   --gap-xs:  0.5rem;
   --gap-sm:  1rem;
   --gap-md:  2rem;
   --gap-lg:  4rem;
   --gap-xl:  7rem;
 
-  /* Transitions */
   --ease:    cubic-bezier(0.22, 0.61, 0.36, 1);
   --dur:     0.35s;
   --dur-fast:0.18s;
 
-  /* Layout */
   --max-w:   1200px;
   --nav-h:   68px;
 }
 
-/* Box model & reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
   scroll-behavior: smooth;
-  /* Base fluide : 16px à 1280px, 18px à 1920px, plafonné à 20px */
   font-size: clamp(16px, 0.9vw + 4.5px, 20px);
 }
 
@@ -67,14 +54,11 @@ ul { list-style: none; }
 img, video { display: block; max-width: 100%; }
 button { cursor: pointer; border: none; background: none; }
 
-/* Scrollbar personnalisée */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--text-faint); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-
-/* ── 2. CANVAS BACKGROUND ──────────────────────────────────────── */
 #bg-canvas {
   position: fixed;
   inset: 0;
@@ -83,8 +67,6 @@ button { cursor: pointer; border: none; background: none; }
   opacity: 0.45;
 }
 
-
-/* ── 3. NAVIGATION ─────────────────────────────────────────────── */
 #navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -112,7 +94,6 @@ button { cursor: pointer; border: none; background: none; }
   gap: var(--gap-md);
 }
 
-/* Logo */
 .nav-logo {
   font-family: var(--font-mono);
   font-size: 1.1rem;
@@ -124,7 +105,6 @@ button { cursor: pointer; border: none; background: none; }
 .nav-logo:hover { color: var(--accent); }
 .logo-bracket { color: var(--accent); }
 
-/* Liens */
 .nav-links {
   display: flex;
   align-items: center;
@@ -157,7 +137,6 @@ button { cursor: pointer; border: none; background: none; }
 }
 .nav-cta:hover { background: var(--accent); color: var(--bg); }
 
-/* Hamburger */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -178,8 +157,6 @@ button { cursor: pointer; border: none; background: none; }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-
-/* ── 4. LAYOUT COMMUN ──────────────────────────────────────────── */
 .container {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -228,8 +205,6 @@ button { cursor: pointer; border: none; background: none; }
   letter-spacing: -0.02em;
 }
 
-
-/* ── 5. HERO ────────────────────────────────────────────────────── */
 .section-hero {
   min-height: 100svh;
   display: flex;
@@ -294,7 +269,6 @@ button { cursor: pointer; border: none; background: none; }
   flex-wrap: wrap;
 }
 
-/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 2.5rem;
@@ -323,7 +297,6 @@ button { cursor: pointer; border: none; background: none; }
   50%       { opacity: 1;   transform: scaleY(1); }
 }
 
-/* Badge flottant */
 .hero-badge {
   position: absolute;
   right: max(2rem, calc(50% - 540px));
@@ -365,8 +338,6 @@ button { cursor: pointer; border: none; background: none; }
   to { transform: rotate(360deg); }
 }
 
-
-/* ── 6. BOUTONS ─────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -405,8 +376,6 @@ button { cursor: pointer; border: none; background: none; }
 
 .btn-sm { padding: 0.5rem 1rem; font-size: 0.78rem; }
 
-
-/* ── 7. À PROPOS ────────────────────────────────────────────────── */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr minmax(0, 340px);
@@ -447,7 +416,6 @@ button { cursor: pointer; border: none; background: none; }
   letter-spacing: 0.05em;
 }
 
-/* Côté avatar */
 .about-side {
   display: flex;
   flex-direction: column;
@@ -511,10 +479,6 @@ button { cursor: pointer; border: none; background: none; }
 }
 .tool-tag:hover { border-color: var(--accent); color: var(--accent); }
 
-
-/* ── 8. PROJETS ─────────────────────────────────────────────────── */
-
-/* Projet featured */
 .project-featured {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -647,7 +611,6 @@ button { cursor: pointer; border: none; background: none; }
 }
 .project-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-/* Grille secondaire */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
@@ -690,8 +653,6 @@ button { cursor: pointer; border: none; background: none; }
 .project-link:hover { gap: 0.6rem; }
 .project-link.muted { color: var(--text-faint); pointer-events: none; }
 
-
-/* ── 9. COMPÉTENCES ────────────────────────────────────────────── */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
@@ -761,7 +722,6 @@ button { cursor: pointer; border: none; background: none; }
 .skill-fill.accent { background: var(--accent); }
 .skill-item.animated .skill-fill { transform: scaleX(1); }
 
-/* Soft skills */
 .soft-skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -782,7 +742,6 @@ button { cursor: pointer; border: none; background: none; }
 .soft-skill:hover { color: var(--text); border-color: var(--border-hover); }
 .ss-icon { font-size: 1rem; }
 
-/* Objectif scolaire */
 .objective-card {
   display: flex;
   align-items: flex-start;
@@ -802,8 +761,6 @@ button { cursor: pointer; border: none; background: none; }
 }
 .objective-text p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
 
-
-/* ── 10. CONTACT ────────────────────────────────────────────────── */
 .contact-intro {
   font-size: 1rem;
   color: var(--text-muted);
@@ -874,8 +831,6 @@ button { cursor: pointer; border: none; background: none; }
   transform: translateX(4px);
 }
 
-
-/* ── 11. FOOTER ─────────────────────────────────────────────────── */
 .footer {
   border-top: 1px solid var(--border);
   padding: var(--gap-md) 0;
@@ -906,8 +861,6 @@ button { cursor: pointer; border: none; background: none; }
 }
 .footer-copy strong { color: var(--text-muted); }
 
-
-/* ── 12. ANIMATIONS REVEAL ──────────────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -918,16 +871,11 @@ button { cursor: pointer; border: none; background: none; }
   transform: none;
 }
 
-/* Delays en cascade */
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.22s; }
 .reveal-delay-3 { transition-delay: 0.35s; }
 .reveal-delay-4 { transition-delay: 0.48s; }
 
-
-/* ── 13. RESPONSIVE ──────────────────────────────────────── */
-
-/* ─ Grand écran 1440p et plus ─ */
 @media (min-width: 1400px) {
   :root {
     --gap-xl: 9rem;
@@ -948,7 +896,6 @@ button { cursor: pointer; border: none; background: none; }
   .badge-icon { font-size: 2.2rem; }
 }
 
-/* ─ Tablette ─ */
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; }
   .about-side {
@@ -969,7 +916,6 @@ button { cursor: pointer; border: none; background: none; }
   .objective-card { padding: var(--gap-md); gap: var(--gap-sm); }
 }
 
-/* ─ Mobile ─ */
 @media (max-width: 640px) {
   :root { --gap-xl: 4rem; --gap-lg: 2.5rem; }
 
@@ -1008,17 +954,14 @@ button { cursor: pointer; border: none; background: none; }
 
   .contact-card:hover { transform: none; }
 
-  /* Grilles qui restaient en 2 colonnes */
   .soft-skills-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { max-width: 100%; }
 
-  /* Sections padding latéral réduit */
   .container { padding: 0 1rem; }
   .nav-inner { padding: 0 1rem; }
   .section-hero { padding-left: 1rem; padding-right: 1rem; }
 }
 
-/* ─ Très petit mobile (< 400px) ─ */
 @media (max-width: 400px) {
   .hero-name { font-size: clamp(2rem, 14vw, 3rem); }
   .btn { font-size: 0.78rem; padding: 0.65rem 1.1rem; }
