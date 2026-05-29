@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Noah — Développeur passionné par les jeux vidéo, candidat en école de développement de jeux vidéo." />
+  <meta name="author" content="Noah GAUTHIER" />
+  <meta name="keywords" content="développeur jeux vidéo, Unreal Engine 5, portfolio, étudiant, game dev" />
+
+  <!-- Open Graph (aperçu réseaux sociaux) -->
+  <meta property="og:title" content="Noah — Game Developer Portfolio" />
+  <meta property="og:description" content="Développeur en devenir spécialisé en jeux vidéo · Unreal Engine 5 · Blueprint" />
+  <meta property="og:type" content="website" />
+
+  <title>Noah · Game Dev Portfolio</title>
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0f'/><path d='M8 16h4m0-4v8M20 12v8M20 16h4' stroke='%2300ffe5' stroke-width='2.5' stroke-linecap='round'/></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       CANVAS BACKGROUND (particules + grille)
+  ═══════════════════════════════════════════ -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ═══════════════════════════════════════════
+       BARRE DE NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Accueil">
+        <span class="logo-bracket">[</span>NG<span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Bouton hamburger (mobile) -->
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about" class="nav-link"><span class="nav-num">01.</span>À propos</a></li>
+        <li><a href="#projects" class="nav-link"><span class="nav-num">02.</span>Projets</a></li>
+        <li><a href="#skills" class="nav-link"><span class="nav-num">03.</span>Compétences</a></li>
+        <li><a href="#contact" class="nav-link"><span class="nav-num">04.</span>Contact</a></li>
+        <li><a href="mailto:votre@email.com" class="nav-cta">Me contacter</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION HERO
+    ═══════════════════════════════════════════ -->
+    <section id="hero" class="section-hero" aria-label="Présentation">
+      <div class="hero-content">
+
+        <p class="hero-greeting reveal">
+          <span class="terminal-prompt">$&gt;</span> Bonjour, je suis
+        </p>
+
+        <h1 class="hero-name reveal reveal-delay-1">
+          Noah<br />
+          <span class="hero-name-sub">GAUTHIER</span>
+        </h1>
+
+        <h2 class="hero-title reveal reveal-delay-2">
+          Développeur en devenir<br />
+          <span class="accent">spécialisé en jeux vidéo</span>
+        </h2>
+
+        <p class="hero-desc reveal reveal-delay-3">
+          Passionné de création interactive, je conçois des expériences vidéoludiques<br class="br-desktop" />
+          avec Unreal Engine 5 et je cherche à rejoindre une école pour aller plus loin.
+        </p>
+
+        <div class="hero-actions reveal reveal-delay-4">
+          <a href="#projects" class="btn btn-primary">
+            <span>Voir mes projets</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Me contacter</a>
+        </div>
+
+        <!-- Indicateur de scroll -->
+        <div class="scroll-indicator reveal reveal-delay-4" aria-hidden="true">
+          <span class="scroll-line"></span>
+          <span class="scroll-text">Scroll</span>
+        </div>
+      </div>
+
+      <!-- Badge flottant -->
+      <div class="hero-badge reveal reveal-delay-3" aria-hidden="true">
+        <div class="badge-ring"></div>
+        <div class="badge-inner">
+          <span class="badge-icon">🎮</span>
+          <span class="badge-label">Game Dev</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION À PROPOS
+    ═══════════════════════════════════════════ -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">01. À propos</span>
+          <h2 id="about-title" class="section-title">Qui suis-je ?</h2>
+        </header>
+
+        <div class="about-grid">
+          <!-- Colonne texte -->
+          <div class="about-text">
+            <p class="about-p reveal">
+              Je suis <strong>Noah</strong>, passionné par l'univers du développement de jeux vidéo depuis mes 11 ans.
+              Ce qui m'attire dans ce domaine, c'est la combinaison unique entre logique de programmation et création artistique.
+            </p>
+            <p class="about-p reveal">
+              Autodidacte et curieux, j'ai appris à utiliser <strong>Unreal Engine 5</strong> à travers des tutoriels,
+              des projets personnels et la communauté en ligne. Je maîtrise les <strong>Blueprints</strong> et je commence
+              à explorer en profondeur pour aller plus loin.
+            </p>
+            <p class="about-p reveal">
+              Mon objectif est d'intégrer une école spécialisée en développement de jeux vidéo afin d'acquérir
+              une formation solide, travailler en équipe sur des projets ambitieux, et devenir un développeur
+              <strong>game dev</strong> compétent et polyvalent.
+            </p>
+
+            <div class="about-highlights reveal">
+              <div class="highlight-item">
+                <span class="highlight-num">03</span>
+                <span class="highlight-label">Projets réalisés</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-num">UE5</span>
+                <span class="highlight-label">Moteur principal</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-num">∞</span>
+                <span class="highlight-label">Curiosité</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne avatar / outils -->
+          <div class="about-side reveal">
+            <div class="about-avatar" aria-hidden="true">
+              <!-- Remplacez par votre photo : <img src="assets/photo.jpg" alt="Noah GAUTHIER" /> -->
+              <div class="avatar-placeholder">
+                <span class="avatar-initials">NG</span>
+                <div class="avatar-ring"></div>
+              </div>
+            </div>
+
+            <div class="about-tools">
+              <p class="tools-label">Outils &amp; environnement</p>
+              <ul class="tools-list" role="list">
+                <li class="tool-tag">Unreal Engine 5</li>
+                <li class="tool-tag">Blueprint</li>
+                <li class="tool-tag">VS Code</li>
+                <li class="tool-tag">Git / GitHub</li>
+                <li class="tool-tag">Blender (bases)</li>
+                <li class="tool-tag">Notion</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION PROJETS
+    ═══════════════════════════════════════════ -->
+    <section id="projects" class="section section-dark" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">02. Projets</span>
+          <h2 id="projects-title" class="section-title">Ce que j'ai construit</h2>
+        </header>
+
+        <!-- Projet principal (featured) -->
+        <article class="project-featured reveal" aria-label="Projet principal">
+          <div class="project-featured-visual">
+            <!-- Remplace par : <img src="assets/extraction-shooter.jpg" alt="Extraction Shooter" /> -->
+            <div class="project-placeholder" aria-hidden="true">
+              <div class="placeholder-grid"></div>
+              <span class="placeholder-label">🎮 Screenshot ou vidéo à venir</span>
+            </div>
+            <div class="project-featured-badge">Featured</div>
+          </div>
+
+          <div class="project-featured-info">
+            <p class="project-type">Prototype · Unreal Engine 5.6</p>
+            <h3 class="project-title">Extraction Shooter<br />
+              <span style="color:var(--text-muted);font-size:0.75em;font-weight:400;">Nom à venir</span>
+            </h3>
+            <div class="project-desc-box">
+              <p>
+                Prototype d'un jeu de type extraction shooter développé en solo sous Unreal Engine 5.6.
+                Mécaniques conçues from scratch : système de déplacement du personnage, gestion des inputs,
+                logique de tir et retour visuel/sonore en Blueprint.
+              </p>
+              <p>
+                Ce projet m'a permis d'appréhender la pipeline complète d'un jeu en 3D — du character
+                movement au game loop. Le projet s'appuie sur des assets existants pour se concentrer sur la programmation
+                et la logique de jeu plutôt que sur la production artistique.
+              </p>
+            </div>
+            <ul class="project-tech" role="list" aria-label="Technologies utilisées">
+              <li>Unreal Engine 5.6</li>
+              <li>Blueprint</li>
+              <li>Character Movement</li>
+              <li>Input System</li>
+            </ul>
+            <div class="project-links">
+              <span class="btn btn-ghost btn-sm" style="opacity:0.5;cursor:default;">GitHub bientôt</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Grille de projets secondaires -->
+        <div class="projects-grid" role="list">
+
+          <!-- NewFrance RP -->
+          <article class="project-card reveal" role="listitem">
+            <div class="project-card-visual">
+              <div class="project-placeholder small" aria-hidden="true">
+                <!-- Remplace par : <img src="assets/newfrance.jpg" alt="NewFrance RP" /> -->
+                <span class="placeholder-label">🚔</span>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <p class="project-type">Serveur FiveM · Lua / ESX</p>
+              <h3 class="project-title">NewFrance RP</h3>
+              <p class="project-card-desc">
+                Serveur FiveM roleplay développé à 80% en solo. J'ai conçu et scripté l'ensemble
+                de l'infrastructure : jobs custom, système économique, UI avec ox_lib,
+                gestion des véhicules et garages. Un projet réel avec de vrais joueurs,
+                qui m'a appris à coder pour de la production.
+              </p>
+              <ul class="project-tech small" role="list">
+                <li>Lua</li>
+                <li>ESX Framework</li>
+                <li>ox_lib / ox_inventory</li>
+                <li>oxmysql</li>
+              </ul>
+              <span class="project-link muted">En développement</span>
+            </div>
+          </article>
+
+          <!-- Valoria -->
+          <article class="project-card reveal" role="listitem">
+            <div class="project-card-visual">
+              <div class="project-placeholder small" aria-hidden="true">
+                <!-- Remplace par : <img src="assets/valoria.jpg" alt="Valoria" /> -->
+                <span class="placeholder-label">⛏️</span>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <p class="project-type">Serveur Minecraft · Administration</p>
+              <h3 class="project-title">Valoria</h3>
+              <p class="project-card-desc">
+                Mise en place, configuration et maintenance d'un serveur Minecraft.
+                Résolution de conflits entre plugins, débogage de comportements inattendus
+                et optimisation des performances pour assurer une expérience stable aux joueurs.
+              </p>
+              <ul class="project-tech small" role="list">
+                <li>Java (plugins)</li>
+                <li>Administration serveur</li>
+                <li>Optimisation</li>
+                <li>Debug</li>
+              </ul>
+              <span class="project-link muted">Serveur public</span>
+            </div>
+          </article>
+
+          <!-- Projet 4 — ajoutez autant que nécessaire 
+          <article class="project-card reveal" role="listitem">
+            <div class="project-card-visual">
+              <div class="project-placeholder small" aria-hidden="true">
+                <span class="placeholder-label">💡</span>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <p class="project-type">Mini-jeu · Scratch / autre</p>
+              <h3 class="project-title">[Projet 4 — premier projet]</h3>
+              <p class="project-card-desc">
+                Votre premier projet, aussi modeste soit-il, montre votre progression.
+                Décrivez-le avec honnêteté et mettez en avant ce que vous en avez tiré.
+              </p>
+              <ul class="project-tech small" role="list">
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <span class="project-link muted">Pas encore en ligne</span>
+            </div>
+          </article>-->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION COMPÉTENCES
+    ═══════════════════════════════════════════ -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">03. Compétences</span>
+          <h2 id="skills-title" class="section-title">Ma stack technique</h2>
+        </header>
+
+        <div class="skills-grid">
+
+          <!-- Langages -->
+          <div class="skills-category reveal">
+            <h3 class="skills-cat-title">
+              <span class="cat-icon" aria-hidden="true">{"}"}</span>
+              Langages
+            </h3>
+            <ul class="skills-list" role="list">
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Blueprint (UE5)</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Blueprint — 60%">
+                  <div class="skill-fill accent" style="--fill: 60%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Lua (FiveM / ESX)</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" aria-label="Lua — 45%">
+                  <div class="skill-fill" style="--fill: 45%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">C# (bases)</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="C# — 20%">
+                  <div class="skill-fill" style="--fill: 20%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">HTML / CSS</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" aria-label="HTML/CSS — 35%">
+                  <div class="skill-fill" style="--fill: 35%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">JavaScript (bases)</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript — 20%">
+                  <div class="skill-fill" style="--fill: 20%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Moteurs & Logiciels -->
+          <div class="skills-category reveal">
+            <h3 class="skills-cat-title">
+              <span class="cat-icon" aria-hidden="true">⬡</span>
+              Moteurs &amp; logiciels
+            </h3>
+            <ul class="skills-list" role="list">
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Unreal Engine 5</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="UE5 — 65%">
+                  <div class="skill-fill accent" style="--fill: 65%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">VS Code</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="VS Code — 55%">
+                  <div class="skill-fill accent" style="--fill: 55%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Blender (3D bases)</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Blender — 20%">
+                  <div class="skill-fill" style="--fill: 20%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Soft skills -->
+          <div class="skills-category reveal">
+            <h3 class="skills-cat-title">
+              <span class="cat-icon" aria-hidden="true">◈</span>
+              Compétences transverses
+            </h3>
+            <div class="soft-skills-grid" role="list">
+              <div class="soft-skill" role="listitem">
+                <span class="ss-icon" aria-hidden="true">🔍</span>
+                <span>Curiosité & veille</span>
+              </div>
+              <div class="soft-skill" role="listitem">
+                <span class="ss-icon" aria-hidden="true">🧩</span>
+                <span>Résolution de problèmes</span>
+              </div>
+              <div class="soft-skill" role="listitem">
+                <span class="ss-icon" aria-hidden="true">📚</span>
+                <span>Autodidacte</span>
+              </div>
+              <div class="soft-skill" role="listitem">
+                <span class="ss-icon" aria-hidden="true">🤝</span>
+                <span>Travail en équipe</span>
+              </div>
+              <div class="soft-skill" role="listitem">
+                <span class="ss-icon" aria-hidden="true">🎯</span>
+                <span>Rigueur</span>
+              </div>
+              <div class="soft-skill" role="listitem">
+                <span class="ss-icon" aria-hidden="true">🚀</span>
+                <span>Motivation</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Encart objectif scolaire -->
+        <div class="objective-card reveal">
+          <div class="objective-icon" aria-hidden="true">🎓</div>
+          <div class="objective-text">
+            <h3>Objectif : intégrer une école de jeux vidéo</h3>
+            <p>
+              Je recherche une formation spécialisée en développement de jeux vidéo pour approfondir
+              mes compétences techniques, découvrir le travail en studio et construire des projets
+              ambitieux avec une équipe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION CONTACT
+    ═══════════════════════════════════════════ -->
+    <section id="contact" class="section section-dark" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-header centered">
+          <span class="section-tag">04. Contact</span>
+          <h2 id="contact-title" class="section-title">Parlons-en</h2>
+          <p class="contact-intro reveal">
+            Vous êtes une école, un recruteur ou simplement curieux ?<br />
+            N'hésitez pas à m'écrire, je réponds sous 48h max.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+
+          <a href="mailto:n.gauthier.riboux@gmail.com" class="contact-card reveal" aria-label="Envoyer un email">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M2 7l10 7 10-7"/>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">n.gauthier.riboux@gmail.com</span>
+            </div>
+            <span class="contact-card-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="https://github.com/ODG747" target="_blank" rel="noopener noreferrer" class="contact-card reveal" aria-label="Profil GitHub">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="currentColor" width="28" height="28">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <span class="contact-card-label">GitHub</span>
+              <span class="contact-card-value">@ODG747</span>
+            </div>
+            <span class="contact-card-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <!-- Discord (optionnel — décommentez si souhaité) -->
+          <!--
+          <div class="contact-card reveal" aria-label="Discord">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 71 55" fill="currentColor" width="28" height="28">
+                <path d="M60.1 4.9A58.5 58.5 0 0 0 45.4.4a.2.2 0 0 0-.2.1 40.7 40.7 0 0 0-1.8 3.7 54 54 0 0 0-16.2 0A37.5 37.5 0 0 0 25.4.5a.2.2 0 0 0-.2-.1A58.4 58.4 0 0 0 10.5 4.9C10.4 5 10.3 5 10.3 5.1 1.5 18.4-.9 31.4.3 44.2v.1a58.8 58.8 0 0 0 17.9 9 .2.2 0 0 0 .2-.1A42 42 0 0 0 22 47a.2.2 0 0 0-.1-.3 38.7 38.7 0 0 1-5.5-2.6.2.2 0 0 1 0-.4l1.1-.9a.2.2 0 0 1 .2 0c11.6 5.3 24.1 5.3 35.5 0a.2.2 0 0 1 .2 0l1.1.9a.2.2 0 0 1 0 .4 36 36 0 0 1-5.5 2.6.2.2 0 0 0-.1.3 47 47 0 0 0 3.6 5.9.2.2 0 0 0 .2 0 58.6 58.6 0 0 0 17.9-9v-.1C73.7 29.6 70.4 16.7 60.1 4.9zM23.8 36.6c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1c3.6 0 6.5 3.2 6.4 7.1 0 3.9-2.8 7.1-6.4 7.1zm23.6 0c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1c3.6 0 6.5 3.2 6.4 7.1 0 3.9-2.8 7.1-6.4 7.1z"/>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <span class="contact-card-label">Discord</span>
+              <span class="contact-card-value">votre_pseudo#0000</span>
+            </div>
+          </div>
+          -->
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">
+        <span class="logo-bracket">[</span>NG<span class="logo-bracket">]</span>
+      </p>
+      <p class="footer-copy">
+        Conçu &amp; développé par <strong>Noah Gauthier</strong> · <span id="footer-year"></span>
+      </p>
+      <p class="footer-built">
+        Fait avec HTML, CSS &amp; JS · Hébergé sur GitHub Pages
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
