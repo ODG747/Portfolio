@@ -9,7 +9,7 @@ Ce site a été créé pour présenter :
 - mes expériences et projets personnels
 
 ## 🌐 Site en ligne
-👉 https://odg747.netlify.app/
+👉 https://odg747.github.io/Portfolio/
 
 ## 🛠 Technologies utilisées
 - HTML
