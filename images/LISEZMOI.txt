@@ -1,0 +1,19 @@
+Dépose ici les captures d'écran des projets, en .webp.
+
+Le site va chercher exactement ces noms de fichiers :
+
+  survie-ue5.webp        → jeu de survie Unreal Engine 5
+  valoria.webp           → serveur Minecraft Valoria
+  presentation-3d.webp   → présentation web 3D
+  horreur-ps1.webp       → jeu d'horreur PS1
+  oleen.webp             → application OLEEN
+
+Tant qu'un fichier est absent, le site affiche proprement « Capture à venir »
+au lieu d'une image cassée. Rien à modifier dans le code : dépose l'image,
+elle apparaît.
+
+Format conseillé : 1600 x 900 pixels, qualité 80, moins de 200 Ko par image.
+Convertir en WebP sans logiciel : squoosh.app
+
+og.png est l'image d'aperçu affichée quand on colle le lien du site
+quelque part (Discord, WhatsApp, Instagram). Ne la renomme pas.

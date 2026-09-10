@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeu de survie — Noah Gauthier</title>
+<meta name="description" content="Jeu de survie en monde ouvert développé seul sous Unreal Engine 5 en Blueprint : jauges de survie, cycle jour/nuit et météo dynamique fonctionnels, inventaire et craft en chantier.">
+<meta name="author" content="Noah Gauthier">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#100f0d" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://odg747.github.io/Portfolio/projets/survie-ue5.html">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Noah Gauthier">
+<meta property="og:title" content="Jeu de survie — Noah Gauthier">
+<meta property="og:description" content="Jeu de survie en monde ouvert développé seul sous Unreal Engine 5 en Blueprint : jauges de survie, cycle jour/nuit et météo dynamique fonctionnels, inventaire et craft en chantier.">
+<meta property="og:url" content="https://odg747.github.io/Portfolio/projets/survie-ue5.html">
+<meta property="og:image" content="https://odg747.github.io/Portfolio/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Noah Gauthier — portfolio de développement de jeux vidéo">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d9541e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23fff' text-anchor='middle'%3ENG%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Les polices sont chargées sans bloquer l'affichage : si Google Fonts est lent
+     ou injoignable, le texte s'affiche tout de suite avec les polices de secours. -->
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css">
+
+<script>
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+
+<body>
+<a class="saut-contenu" href="#contenu">Aller au contenu</a>
+
+<header class="bandeau">
+  <div class="bandeau__interieur">
+    <a class="marque" href="../"><span class="marque__long">Noah Gauthier</span><span class="marque__court" aria-hidden="true">NG</span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="../#projets">Projets</a>
+      <a href="../#outils">Outils</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+    <button class="bouton-theme" type="button" aria-label="Changer de thème">
+      <svg class="icone-soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icone-lune" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="contenu">
+  <div class="enveloppe fiche__entete">
+    <a class="fil-ariane" href="../#projets">← Tous les projets</a>
+    <h1>Jeu de survie</h1>
+    <p class="fiche__chapeau">
+      Un jeu de survie en monde ouvert, dans un environnement de montagne, que je développe
+      seul sous Unreal Engine 5. C'est mon projet principal et le plus long : il me sert
+      à apprendre à construire des systèmes qui tiennent ensemble.
+    </p>
+    <div class="fiche__meta">
+      <span class="statut" data-statut="en-cours">En cours</span>
+      <span class="etiquette">Solo</span>
+      <span class="etiquette">Unreal Engine 5 · Blueprint</span>
+    </div>
+  </div>
+
+  <div class="enveloppe">
+    <figure>
+      <div class="fiche__visuel">
+        <img src="../images/survie-ue5.webp" alt="Capture du jeu de survie : environnement de montagne sous Unreal Engine 5" loading="lazy" width="1200" height="675">
+        <p class="visuel-absent">Capture à venir</p>
+      </div>
+      <figcaption>Le terrain de jeu : forêts, vallées et reliefs de montagne.</figcaption>
+    </figure>
+  </div>
+
+  <div class="enveloppe fiche__corps">
+
+    <section>
+      <h2>Ce que c'est</h2>
+      <p>
+        Un jeu de survie solo dans un monde ouvert de montagne : forêts, vallées, lacs,
+        grottes et petits villages. L'idée est simple — on est lâché dans cet environnement,
+        et il faut tenir : trouver de quoi boire et manger, gérer sa fatigue, s'organiser
+        avant la nuit et le mauvais temps.
+      </p>
+      <p>
+        Je le développe entièrement seul, en Blueprint, et je le construis système par
+        système plutôt que niveau par niveau. C'est un choix assumé : ce qui m'intéresse
+        ici, c'est de comprendre comment les mécaniques d'un jeu s'articulent, pas de
+        produire une démo jolie mais creuse.
+      </p>
+    </section>
+
+    <section>
+      <h2>Où j'en suis, précisément</h2>
+      <p>
+        Je préfère séparer ce qui tourne réellement en jeu de ce qui est encore un chantier.
+        Le premier bloc est testé et jouable ; le second ne l'est pas.
+      </p>
+      <div class="bilan">
+        <div>
+          <h3>Ça tourne en jeu</h3>
+          <ul class="fait">
+            <li><strong>Les jauges de survie</strong> — elles évoluent avec le temps et l'activité du joueur, et ont un effet réel sur lui.</li>
+            <li><strong>Le cycle jour / nuit</strong> — le temps passe, la lumière change.</li>
+            <li><strong>La météo dynamique</strong> — les conditions changent en cours de partie.</li>
+            <li><strong>L'environnement</strong> — le terrain de montagne est en place et parcourable.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>En chantier</h3>
+          <ul>
+            <li>L'inventaire</li>
+            <li>Le craft</li>
+            <li>La construction d'abris</li>
+            <li>La sauvegarde du monde</li>
+            <li>L'IA et la faune</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pourquoi j'ai commencé par là</h2>
+      <p>
+        Les jauges, le temps et la météo sont les systèmes qui n'ont besoin de rien d'autre
+        pour fonctionner : ils tournent tout seuls, en fond, et on voit tout de suite s'ils
+        sont cassés. L'inventaire et le craft, eux, touchent à presque tout le reste — au
+        joueur, à l'interface, aux objets du monde, plus tard à la sauvegarde. Les attaquer
+        en premier, sans avoir de base solide, m'aurait obligé à tout refaire.
+      </p>
+      <p>
+        C'est aussi une contrainte honnête : je suis encore en train d'apprendre à
+        programmer. Tout le projet est en Blueprint, et je n'ai pas encore le niveau en C++
+        pour aborder certains systèmes autrement. Donc j'avance dans l'ordre de ce que je
+        sais faire tourner, et je monte en difficulté au fur et à mesure.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ce que ça m'apprend</h2>
+      <ul>
+        <li><strong>Découper avant de coder.</strong> Un « système d'inventaire » n'est pas une tâche, c'est dix. Tant que je ne les ai pas listées, je m'y perds.</li>
+        <li><strong>Tester en jeu, pas dans l'éditeur.</strong> Une jauge peut être parfaite dans le Blueprint et illisible manette en main.</li>
+        <li><strong>Accepter d'être lent.</strong> Ce projet avance moins vite que je voudrais, mais chaque système fini est un système que je saurai refaire.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Outils</h2>
+      <ul>
+        <li>Unreal Engine 5</li>
+        <li>Blueprint — l'intégralité de la logique de jeu</li>
+        <li>Landscape pour le relief, éclairage dynamique pour le cycle jour/nuit</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="enveloppe fiche__suite">
+    <span class="etiquette">Projet suivant</span>
+    <a href="serveur-valoria.html">Valoria — serveur PVP faction →</a>
+  </div>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe pied__interieur">
+    <span>Noah Gauthier — 2026</span>
+    <span>HTML, CSS et JavaScript écrits à la main</span>
+  </div>
+</footer>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

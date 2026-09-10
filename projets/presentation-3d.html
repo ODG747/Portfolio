@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Présentation web interactive 3D — Noah Gauthier</title>
+<meta name="description" content="Un exercice de cours demandait un diaporama : j'en ai fait une présentation web navigable en 3D avec Three.js et Blender. Conception et direction artistique de moi, code assisté par IA.">
+<meta name="author" content="Noah Gauthier">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#100f0d" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://odg747.github.io/Portfolio/projets/presentation-3d.html">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Noah Gauthier">
+<meta property="og:title" content="Présentation web interactive 3D — Noah Gauthier">
+<meta property="og:description" content="Un exercice de cours demandait un diaporama : j'en ai fait une présentation web navigable en 3D avec Three.js et Blender. Conception et direction artistique de moi, code assisté par IA.">
+<meta property="og:url" content="https://odg747.github.io/Portfolio/projets/presentation-3d.html">
+<meta property="og:image" content="https://odg747.github.io/Portfolio/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Noah Gauthier — portfolio de développement de jeux vidéo">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d9541e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23fff' text-anchor='middle'%3ENG%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Les polices sont chargées sans bloquer l'affichage : si Google Fonts est lent
+     ou injoignable, le texte s'affiche tout de suite avec les polices de secours. -->
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css">
+
+<script>
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+
+<body>
+<a class="saut-contenu" href="#contenu">Aller au contenu</a>
+
+<header class="bandeau">
+  <div class="bandeau__interieur">
+    <a class="marque" href="../"><span class="marque__long">Noah Gauthier</span><span class="marque__court" aria-hidden="true">NG</span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="../#projets">Projets</a>
+      <a href="../#outils">Outils</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+    <button class="bouton-theme" type="button" aria-label="Changer de thème">
+      <svg class="icone-soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icone-lune" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="contenu">
+  <div class="enveloppe fiche__entete">
+    <a class="fil-ariane" href="../#projets">← Tous les projets</a>
+    <h1>Présentation web<br>interactive 3D</h1>
+    <p class="fiche__chapeau">
+      Un exercice de cours demandait un diaporama. J'ai préféré en faire une présentation
+      web navigable en 3D, dans le navigateur. Elle n'est pas terminée, et le code n'est
+      pas de moi — j'explique exactement ce que j'y ai fait.
+    </p>
+    <div class="fiche__meta">
+      <span class="statut" data-statut="en-cours">En cours</span>
+      <span class="etiquette">Solo</span>
+      <span class="etiquette">Three.js · Blender</span>
+    </div>
+  </div>
+
+  <div class="enveloppe">
+    <figure>
+      <div class="fiche__visuel">
+        <img src="../images/presentation-3d.webp" alt="Capture de la présentation web interactive en 3D" loading="lazy" width="1200" height="675">
+        <p class="visuel-absent">Capture à venir</p>
+      </div>
+      <figcaption>La présentation, dans le navigateur.</figcaption>
+    </figure>
+  </div>
+
+  <div class="enveloppe fiche__corps">
+
+    <section>
+      <h2>Ce que c'est</h2>
+      <p>
+        Un exercice de cours en informatique attendait un diaporama classique. J'ai trouvé
+        le format pauvre pour ce que je voulais montrer, alors j'en ai fait autre chose :
+        une présentation qui s'ouvre dans un navigateur, où l'on se déplace dans une scène
+        en trois dimensions au lieu de faire défiler des diapositives.
+      </p>
+      <p>
+        Le rendu 3D passe par Three.js, une bibliothèque JavaScript qui affiche de la 3D
+        dans une page web, et les éléments de la scène viennent de Blender.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ce que j'ai fait, et ce que je n'ai pas fait</h2>
+      <p>
+        C'est le point important de cette fiche, et je préfère le poser franchement plutôt
+        que de laisser croire à un travail de programmation qui n'est pas le mien.
+      </p>
+      <div class="bilan">
+        <div>
+          <h3>De moi</h3>
+          <ul class="fait">
+            <li><strong>L'idée</strong> — refuser le diaporama et le remplacer par une scène 3D navigable.</li>
+            <li><strong>La conception</strong> — ce que contient la présentation, dans quel ordre, comment on s'y déplace.</li>
+            <li><strong>La direction artistique</strong> — l'ambiance, les couleurs, la mise en scène, ce que voit le visiteur en arrivant.</li>
+            <li><strong>Les décisions</strong> — ce qu'on garde, ce qu'on coupe, ce qui ne marche pas.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Pas de moi</h3>
+          <ul>
+            <li>Le code Three.js, écrit avec l'aide d'une IA. Je ne connaissais pas la bibliothèque, et je ne la maîtrise toujours pas.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="citation">
+        <p>
+          Je ne compte pas ce projet comme une preuve que je sais programmer en 3D sur le
+          web — ce serait malhonnête. Je le montre parce qu'il dit autre chose de moi :
+          face à un exercice, je suis allé plus loin que ce qui était demandé, et j'ai su
+          diriger un résultat que je ne savais pas produire seul.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ce que j'y ai appris</h2>
+      <ul>
+        <li><strong>Décrire précisément ce qu'on veut.</strong> Une demande vague donne un résultat vague, que le travail soit fait par un outil ou par quelqu'un d'autre. J'ai dû apprendre à formuler exactement ce que j'attendais.</li>
+        <li><strong>Juger un résultat sans savoir le produire.</strong> Je ne pouvais pas relire le code, mais je pouvais voir que la caméra était mal placée, que l'éclairage écrasait la scène, que la navigation n'était pas claire.</li>
+        <li><strong>La limite de la méthode.</strong> Quand quelque chose casse et que je ne comprends pas le code, je suis bloqué. C'est une des raisons pour lesquelles je veux apprendre à programmer sérieusement, plutôt que de rester à ce niveau.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Où ça en est</h2>
+      <p>
+        La présentation n'est pas terminée et n'est pas encore publiée : je compte la mettre
+        en ligne sur Netlify quand elle sera finie. Le lien sera ajouté ici à ce moment-là.
+      </p>
+    </section>
+
+    <section>
+      <h2>Outils</h2>
+      <ul>
+        <li>Three.js — affichage 3D dans le navigateur</li>
+        <li>Blender — éléments de la scène</li>
+        <li>HTML, CSS, JavaScript</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="enveloppe fiche__suite">
+    <span class="etiquette">Projet suivant</span>
+    <a href="horreur-ps1.html">Jeu d'horreur — style PS1 →</a>
+  </div>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe pied__interieur">
+    <span>Noah Gauthier — 2026</span>
+    <span>HTML, CSS et JavaScript écrits à la main</span>
+  </div>
+</footer>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
