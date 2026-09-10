@@ -1,18 +1,40 @@
-Dépose ici les captures d'écran des projets, en .webp.
+Dépose ici les captures d'écran, en .webp.
 
+------------------------------------------------------------------
+CAPTURES DE JEU  →  images/
+------------------------------------------------------------------
 Le site va chercher exactement ces noms de fichiers :
 
   survie-ue5.webp        → jeu de survie Unreal Engine 5
-  valoria.webp           → serveur Minecraft Valoria
-  presentation-3d.webp   → présentation web 3D
   horreur-ps1.webp       → jeu d'horreur PS1
+  presentation-3d.webp   → présentation web 3D
+  valoria.webp           → serveur Minecraft Valoria
   oleen.webp             → application OLEEN
 
-Tant qu'un fichier est absent, le site affiche proprement « Capture à venir »
-au lieu d'une image cassée. Rien à modifier dans le code : dépose l'image,
+------------------------------------------------------------------
+CAPTURES DE GRAPHES BLUEPRINT  →  images/blueprints/
+------------------------------------------------------------------
+Un fichier par système documenté, nommé <projet>-<systeme>.webp :
+
+  survie-jauges.webp
+  survie-cycle-jour-nuit.webp
+  survie-inventaire.webp
+
+Comment faire une bonne capture de Blueprint :
+  · range le graphe avant (nœuds alignés, pas de fils croisés)
+  · mets des commentaires (touche C sur une sélection) pour nommer
+    les blocs logiques — c'est ce qu'un jury regarde en premier
+  · dézoome pour que tout le système tienne dans l'image
+  · capture la fenêtre du graphe seule, pas tout l'écran
+
+------------------------------------------------------------------
+Tant qu'un fichier est absent, le site affiche proprement
+« Capture à venir » au lieu d'une image cassée, et il masque le lien
+« Voir en grand ». Rien à modifier dans le code : dépose l'image,
 elle apparaît.
 
-Format conseillé : 1600 x 900 pixels, qualité 80, moins de 200 Ko par image.
+Format conseillé : 1600 x 900 pixels (les graphes peuvent être plus
+larges), qualité 80, moins de 250 Ko par image.
 Convertir en WebP sans logiciel : squoosh.app
 
 og.png est l'image d'aperçu affichée quand on colle le lien du site

@@ -12,12 +12,14 @@ Aucun outil à installer : on ouvre un fichier, on modifie, on envoie.
 ## Ce qu'il y a dans le dossier
 
 ```
-index.html              la page d'accueil (intro, cartes projets, outils, contact)
+index.html              la page d'accueil (intro, projets, Unreal Engine 5,
+                        outils, contact)
 assets/style.css        toute la mise en forme
 assets/site.js          bouton clair/sombre, maillage 3D de l'en-tête, images absentes
 projets/                une page par projet
   _modele.html          modèle à copier pour ajouter un projet
-images/                 les captures d'écran + l'image d'aperçu (og.png)
+images/                 les captures de jeu + l'image d'aperçu (og.png)
+  blueprints/           les captures de graphes Blueprint
 .nojekyll               nécessaire pour que GitHub Pages publie _modele.html
 ```
 
@@ -61,9 +63,16 @@ plus mauvais effet qu'une section absente.
 
 ### 3. Ajouter la carte sur la page d'accueil
 
-Ouvre `index.html`, va au bloc `<div class="projets">`. Chaque projet est un bloc
-`<article class="carte">` séparé par un commentaire. Copie un bloc entier, colle-le
-là où tu veux que le projet apparaisse, et modifie :
+Ouvre `index.html`. Les projets sont répartis en **deux groupes** :
+
+```html
+<div class="groupe-projets">   ← Unreal Engine 5
+<div class="groupe-projets">   ← Autres projets
+```
+
+Choisis le bon groupe, puis va à son `<div class="projets">`. Chaque projet y est un
+bloc `<article class="carte">` séparé par un commentaire. Copie un bloc entier,
+colle-le là où tu veux que le projet apparaisse, et modifie :
 
 - le lien `href` de `<h3><a href="projets/…">`
 - le titre, le texte de résumé
@@ -71,8 +80,12 @@ là où tu veux que le projet apparaisse, et modifie :
 - la liste `<ul class="technos">`
 - le chemin de l'image et son texte alternatif
 
-L'ordre des projets sur la page d'accueil est simplement l'ordre des blocs dans
-le fichier. Pour remonter un projet, déplace son bloc plus haut.
+L'ordre des projets est simplement l'ordre des blocs dans le fichier. Pour remonter
+un projet, déplace son bloc plus haut ; pour le changer de groupe, déplace-le dans
+l'autre `<div class="projets">`.
+
+Les projets Unreal passent en premier volontairement : c'est l'objectif que tu vises,
+donc c'est ce qu'un jury doit voir d'abord.
 
 ### 4. Déposer la capture
 
@@ -96,6 +109,61 @@ git push
 ```
 
 GitHub Pages met le site à jour tout seul, en une minute environ.
+
+---
+
+## Ajouter un système à une fiche Unreal Engine
+
+C'est la partie technique des fiches UE5 : un bloc par système construit dans le
+moteur. C'est ce qu'un jury de programmation lit en premier.
+
+Ouvre la fiche du projet, trouve la section `<h2>Les systèmes</h2>`, puis
+**copie un bloc `<article class="systeme">` entier** et colle-le à la suite.
+Tu n'as rien d'autre à modifier — ni le CSS, ni l'accueil.
+
+Chaque bloc contient quatre lignes, et tu supprimes celles qui ne te servent pas :
+
+| Ligne | Ce qu'on y met |
+|---|---|
+| **Ce qu'il fait** | Du point de vue du joueur, pas du code |
+| **Comment c'est bâti** | Composant, structure, table de données, interface… |
+| **Ce que ça change** | Ce que ce découpage t'apporte, et ce que l'autre solution t'aurait coûté |
+| **Ce qui a été dur** | Le problème réel et sa solution |
+
+Entoure les noms techniques de `<code>` : ils s'affichent alors en monospace et
+dans la couleur d'accent (`<code>Actor Component</code>`, `<code>Data Table</code>`).
+
+**Une ligne creuse fait plus de mal qu'une ligne absente.** Si tu n'as rien de
+concret à dire sur « ce qui a été dur », supprime la ligne — un jury repère
+immédiatement une phrase écrite pour remplir.
+
+Le statut du système se change au même endroit que celui d'un projet :
+
+```html
+<span class="statut" data-statut="en-cours">En cours</span>
+```
+
+### La capture du graphe
+
+Chaque bloc prévoit une capture de graphe Blueprint, traitée à égalité avec une
+capture de gameplay. Dépose-la dans `images/blueprints/`, nommée
+`<projet>-<systeme>.webp`, et corrige le `src` et le `href` du bloc — ce sont les
+deux seuls endroits où le nom du fichier apparaît.
+
+Conseils pour la capture dans `images/LISEZMOI.txt` : range le graphe et
+commente-le avant de capturer. Un Blueprint bien organisé vaut autant qu'une
+capture de jeu ici.
+
+### Le jour où tu passes un système en C++
+
+Rien à refondre. Deux possibilités :
+
+- **Système par système** — tu dupliques le bloc du système, tu remplaces
+  l'étiquette `Blueprint` par `C++`, et tu décris la version portée. Les deux
+  blocs côte à côte montrent l'évolution, ce qui est plus parlant que le
+  résultat seul.
+- **Comme un projet à part** — tu copies `projets/_modele.html` et tu en fais
+  une fiche dédiée à la conversion.
 
 ---
 

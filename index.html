@@ -49,6 +49,7 @@
     <a class="marque" href="./"><span class="marque__long">Noah Gauthier</span><span class="marque__court" aria-hidden="true">NG</span></a>
     <nav class="nav" aria-label="Navigation principale">
       <a href="#projets">Projets</a>
+      <a href="#unreal">Unreal</a>
       <a href="#outils">Outils</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -75,9 +76,10 @@
         Couffignal, à Strasbourg, et je prendrai la spécialité SIN en terminale.</p>
         <p>Je suis venu au développement par le jeu : j'y jouais beaucoup, je m'intéressais
         déjà à l'informatique, et j'en avais assez des jeux mal faits. À un moment j'ai
-        voulu voir si j'arrivais à faire mieux. Depuis, je construis surtout des
-        <strong>systèmes</strong> — des jauges de survie, un cycle jour/nuit, un serveur
-        et ses règles — parce que c'est la partie qui m'intéresse vraiment.</p>
+        voulu voir si j'arrivais à faire mieux. Je travaille depuis sous
+        <strong>Unreal Engine 5</strong>, où je construis des <strong>systèmes</strong> —
+        des jauges de survie, un inventaire, un cycle jour/nuit — parce que c'est la
+        partie qui m'intéresse vraiment.</p>
         <p>Après le bac, je veux intégrer le <strong>cycle ingénieur jeu vidéo d'ISART Digital</strong>
         et devenir game programmer. Cette page rassemble ce que j'ai construit jusqu'ici,
         y compris ce qui n'est pas fini et ce qui s'est arrêté.</p>
@@ -97,11 +99,17 @@
         <h2>Ce que j'ai construit</h2>
       </div>
       <p class="colonne" style="color:var(--encre-douce); margin-bottom:34px;">
-        Classés du plus abouti au plus léger. Le statut de chacun est indiqué tel quel :
+        Mes projets Unreal Engine d'abord : c'est là que je veux aller, et c'est là que
+        se trouve le plus de travail technique. Le statut de chacun est indiqué tel quel :
         un projet en chantier reste en chantier, un projet arrêté est marqué comme arrêté.
       </p>
 
-      <div class="projets">
+      <div class="groupe-projets">
+        <div class="groupe-projets__titre">
+          <h3>Unreal Engine 5</h3>
+          <p>Mes projets de jeu. Chaque fiche détaille les systèmes que j'ai construits.</p>
+        </div>
+        <div class="projets">
 
         <!-- === PROJET : jeu de survie === -->
         <article class="carte">
@@ -122,53 +130,6 @@
             </p>
             <ul class="technos">
               <li>Unreal Engine 5</li><li>Blueprint</li><li>Landscape</li><li>Systèmes de gameplay</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- === PROJET : serveur Valoria === -->
-        <article class="carte">
-          <div class="carte__visuel">
-            <img src="images/valoria.webp" alt="Capture du serveur Minecraft PVP faction Valoria" loading="lazy" width="800" height="500">
-            <p class="visuel-absent">Capture à venir</p>
-          </div>
-          <div class="carte__corps">
-            <div class="carte__entete">
-              <span class="statut" data-statut="termine">Terminé</span>
-              <span class="etiquette">Minecraft · à deux</span>
-            </div>
-            <h3><a href="projets/serveur-valoria.html">Valoria — serveur PVP faction</a></h3>
-            <p class="carte__texte">
-              Un serveur Minecraft PVP faction monté et administré avec un ami pendant un été.
-              Hébergement, économie, anticheat, optimisation — et nos propres plugins Java :
-              factions, métiers, administration. Le serveur est arrêté depuis la rentrée.
-            </p>
-            <ul class="technos">
-              <li>Administration serveur</li><li>Plugins Java</li><li>Configuration</li><li>Game design</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- === PROJET : présentation web 3D === -->
-        <article class="carte">
-          <div class="carte__visuel">
-            <img src="images/presentation-3d.webp" alt="Capture de la présentation web interactive en 3D" loading="lazy" width="800" height="500">
-            <p class="visuel-absent">Capture à venir</p>
-          </div>
-          <div class="carte__corps">
-            <div class="carte__entete">
-              <span class="statut" data-statut="en-cours">En cours</span>
-              <span class="etiquette">Web · Three.js</span>
-            </div>
-            <h3><a href="projets/presentation-3d.html">Présentation web interactive 3D</a></h3>
-            <p class="carte__texte">
-              Un exercice de cours demandait un diaporama. J'ai préféré en faire une
-              présentation web navigable en 3D. J'en ai assuré la conception et la
-              direction artistique ; le code a été écrit avec l'aide d'une IA, et je
-              l'explique en détail sur la fiche.
-            </p>
-            <ul class="technos">
-              <li>Three.js</li><li>Blender</li><li>HTML / CSS / JS</li>
             </ul>
           </div>
         </article>
@@ -196,6 +157,63 @@
           </div>
         </article>
 
+        </div>
+      </div>
+
+      <div class="groupe-projets">
+        <div class="groupe-projets__titre">
+          <h3>Autres projets</h3>
+          <p>Du web, de l'administration serveur, du mobile. Moins centraux, mais ils comptent.</p>
+        </div>
+        <div class="projets">
+
+        <!-- === PROJET : présentation web 3D === -->
+        <article class="carte">
+          <div class="carte__visuel">
+            <img src="images/presentation-3d.webp" alt="Capture de la présentation web interactive en 3D" loading="lazy" width="800" height="500">
+            <p class="visuel-absent">Capture à venir</p>
+          </div>
+          <div class="carte__corps">
+            <div class="carte__entete">
+              <span class="statut" data-statut="en-cours">En cours</span>
+              <span class="etiquette">Web · Three.js</span>
+            </div>
+            <h3><a href="projets/presentation-3d.html">Présentation web interactive 3D</a></h3>
+            <p class="carte__texte">
+              Un exercice de cours demandait un diaporama. J'ai préféré en faire une
+              présentation web navigable en 3D. J'en ai assuré la conception et la
+              direction artistique ; le code a été écrit avec l'aide d'une IA, et je
+              l'explique en détail sur la fiche.
+            </p>
+            <ul class="technos">
+              <li>Three.js</li><li>Blender</li><li>HTML / CSS / JS</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- === PROJET : serveur Valoria === -->
+        <article class="carte">
+          <div class="carte__visuel">
+            <img src="images/valoria.webp" alt="Capture du serveur Minecraft PVP faction Valoria" loading="lazy" width="800" height="500">
+            <p class="visuel-absent">Capture à venir</p>
+          </div>
+          <div class="carte__corps">
+            <div class="carte__entete">
+              <span class="statut" data-statut="termine">Terminé</span>
+              <span class="etiquette">Minecraft · à deux</span>
+            </div>
+            <h3><a href="projets/serveur-valoria.html">Valoria — serveur PVP faction</a></h3>
+            <p class="carte__texte">
+              Un serveur Minecraft PVP faction monté et administré avec un ami pendant un été.
+              Hébergement, économie, anticheat, optimisation — et nos propres plugins Java :
+              factions, métiers, administration. Le serveur est arrêté depuis la rentrée.
+            </p>
+            <ul class="technos">
+              <li>Administration serveur</li><li>Plugins Java</li><li>Configuration</li><li>Game design</li>
+            </ul>
+          </div>
+        </article>
+
         <!-- === PROJET : OLEEN === -->
         <article class="carte">
           <div class="carte__visuel">
@@ -219,6 +237,55 @@
           </div>
         </article>
 
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= UNREAL ENGINE 5 ================= -->
+  <section class="section" id="unreal">
+    <div class="enveloppe">
+      <div class="section__titre">
+        <span class="etiquette">02 — Unreal Engine 5</span>
+        <h2>Où j'en suis vraiment</h2>
+      </div>
+      <div class="ue5">
+        <div class="colonne">
+          <p>
+            J'ai installé Unreal Engine il y a plus de deux ans. Je n'ai suivi aucune
+            formation : j'ai appris avec des tutoriels vidéo, et depuis quelque temps
+            en m'aidant d'outils d'IA quand je bloque sur un graphe.
+          </p>
+          <p>
+            Autant être clair sur mon niveau, parce que ça se vérifie en trente secondes
+            d'entretien : <strong>je travaille uniquement en Blueprint, et je ne les
+            maîtrise pas encore.</strong> Je sais assembler des systèmes qui tournent.
+            Je sais moins bien expliquer pourquoi je les ai assemblés comme ça. C'est
+            précisément l'écart que je veux combler.
+          </p>
+          <p>
+            Et <strong>je n'ai jamais touché au C++</strong>. Pas « les bases », pas
+            « un peu » : jamais ouvert un fichier. C'est ma prochaine étape, et c'est
+            une des raisons pour lesquelles je vise un cycle ingénieur plutôt qu'une
+            formation courte — j'ai besoin qu'on m'apprenne à structurer, pas seulement
+            à faire fonctionner.
+          </p>
+          <p>Ce que je veux approfondir, dans cet ordre :</p>
+          <ul class="liste-fleche">
+            <li>Le <strong>C++ dans Unreal</strong>, en commençant par porter en C++ un système que j'ai déjà écrit en Blueprint. Le comparatif entre les deux versions sera publié ici.</li>
+            <li>Les <strong>découpages</strong> : quand un composant, quand une interface, quand une structure de données — et savoir le justifier.</li>
+            <li>Savoir <strong>relire mon propre projet</strong> et dire pourquoi il est fait ainsi. C'est ce qui me manque le plus aujourd'hui.</li>
+          </ul>
+        </div>
+        <dl class="ue5__reperes">
+          <div><dt>Premier projet Unreal</dt><dd>Il y a plus de deux ans</dd></div>
+          <div><dt>Comment j'ai appris</dt><dd>Tutoriels vidéo, puis aide d'outils d'IA</dd></div>
+          <div><dt>Ce que j'utilise</dt><dd>Blueprint, sur tous mes projets</dd></div>
+          <div><dt>C++</dt><dd>Jamais pratiqué</dd></div>
+          <div><dt>Prochaine étape</dt><dd>Porter un système Blueprint en C++</dd></div>
+        </dl>
       </div>
     </div>
   </section>
@@ -227,7 +294,7 @@
   <section class="section" id="outils">
     <div class="enveloppe">
       <div class="section__titre">
-        <span class="etiquette">02 — Outils</span>
+        <span class="etiquette">03 — Outils</span>
         <h2>Ce avec quoi je travaille</h2>
       </div>
       <p class="colonne" style="color:var(--encre-douce); margin-bottom:34px;">
@@ -270,7 +337,7 @@
   <section class="section" id="contact">
     <div class="enveloppe">
       <div class="section__titre">
-        <span class="etiquette">03 — Contact</span>
+        <span class="etiquette">04 — Contact</span>
         <h2>Me joindre</h2>
       </div>
       <p class="colonne" style="color:var(--encre-douce);">

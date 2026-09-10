@@ -48,6 +48,7 @@
     <a class="marque" href="../"><span class="marque__long">Noah Gauthier</span><span class="marque__court" aria-hidden="true">NG</span></a>
     <nav class="nav" aria-label="Navigation principale">
       <a href="../#projets">Projets</a>
+      <a href="../#unreal">Unreal</a>
       <a href="../#outils">Outils</a>
       <a href="../#contact">Contact</a>
     </nav>
@@ -131,6 +132,118 @@
       </div>
     </section>
 
+
+    <section>
+      <h2>Les systèmes</h2>
+      <p>
+        Le détail de ce que j'ai construit, système par système : ce qu'il fait, comment
+        il est bâti dans le moteur, et où il en est. Tout est en Blueprint.
+      </p>
+
+      <div class="systemes">
+
+        <!-- === SYSTÈME : jauges de survie === -->
+        <article class="systeme">
+          <header class="systeme__entete">
+            <h3>Jauges de survie</h3>
+            <span class="statut" data-statut="termine">Fonctionne</span>
+            <span class="etiquette">Blueprint</span>
+          </header>
+          <dl class="systeme__grille">
+            <div>
+              <dt>Ce qu'il fait</dt>
+              <dd>Il suit la faim, la soif, la stamina et la santé du joueur. Les valeurs évoluent avec le temps qui passe et avec ce que fait le joueur, et elles ont un effet réel sur lui plutôt que d'être une décoration à l'écran.</dd>
+            </div>
+            <div>
+              <dt>Comment c'est bâti</dt>
+              <dd>Les valeurs et leur logique vivent dans un <code>Actor Component</code> dédié, attaché au personnage — et non dans le Blueprint du personnage lui-même.</dd>
+            </div>
+            <div>
+              <dt>Ce que ça change</dt>
+              <dd>La survie reste séparée du déplacement et des entrées : le Blueprint du personnage ne gonfle pas à mesure que j'ajoute des jauges. Et le composant pourrait être posé sur un autre acteur — un PNJ, un animal — sans réécrire la logique.</dd>
+            </div>
+          </dl>
+      <figure>
+        <div class="fiche__visuel">
+          <img src="../images/blueprints/survie-jauges.webp" alt="Graphe Blueprint du système : Le composant de survie : mise à jour des jauges dans le temps." loading="lazy" width="1200" height="700">
+          <p class="visuel-absent">Capture du graphe à venir</p>
+        </div>
+        <figcaption>
+          <span>Le composant de survie : mise à jour des jauges dans le temps.</span>
+          <a class="lien-image" href="../images/blueprints/survie-jauges.webp">Voir en grand →</a>
+        </figcaption>
+      </figure>
+        </article>
+
+        <!-- === SYSTÈME : cycle jour/nuit et météo === -->
+        <article class="systeme">
+          <header class="systeme__entete">
+            <h3>Cycle jour / nuit et météo</h3>
+            <span class="statut" data-statut="termine">Fonctionne</span>
+            <span class="etiquette">Blueprint</span>
+          </header>
+          <dl class="systeme__grille">
+            <div>
+              <dt>Ce qu'il fait</dt>
+              <dd>Le temps s'écoule pendant la partie : la lumière change au fil des heures, et les conditions météo évoluent d'elles-mêmes en cours de jeu. C'est ce qui rend la nuit et le mauvais temps contraignants, donc ce qui donne un enjeu aux jauges de survie.</dd>
+            </div>
+            <div>
+              <dt>Pourquoi je l'ai fait tôt</dt>
+              <dd>C'est un système qui tourne en fond, sans dépendre du reste. Il m'a servi à valider que les jauges réagissaient bien à quelque chose d'extérieur au joueur.</dd>
+            </div>
+          </dl>
+      <figure>
+        <div class="fiche__visuel">
+          <img src="../images/blueprints/survie-cycle-jour-nuit.webp" alt="Graphe Blueprint du système : Le cycle jour/nuit et le pilotage de la météo." loading="lazy" width="1200" height="700">
+          <p class="visuel-absent">Capture du graphe à venir</p>
+        </div>
+        <figcaption>
+          <span>Le cycle jour/nuit et le pilotage de la météo.</span>
+          <a class="lien-image" href="../images/blueprints/survie-cycle-jour-nuit.webp">Voir en grand →</a>
+        </figcaption>
+      </figure>
+        </article>
+
+        <!-- === SYSTÈME : inventaire === -->
+        <article class="systeme">
+          <header class="systeme__entete">
+            <h3>Inventaire</h3>
+            <span class="statut" data-statut="en-cours">En cours</span>
+            <span class="etiquette">Blueprint</span>
+          </header>
+          <dl class="systeme__grille">
+            <div>
+              <dt>Ce qu'il fait</dt>
+              <dd>Permettre au joueur de ramasser des objets, de les transporter et de s'en servir. C'est le système qui débloque le craft et la construction : tant qu'il n'est pas solide, le reste ne peut pas suivre.</dd>
+            </div>
+            <div>
+              <dt>Comment c'est bâti</dt>
+              <dd>Les objets ne sont pas des Blueprints séparés : ils sont décrits par une <code>Structure</code> — nom, icône, caractéristiques — et listés dans une <code>Data Table</code>.</dd>
+            </div>
+            <div>
+              <dt>Ce que ça change</dt>
+              <dd>Ajouter un objet au jeu, c'est ajouter une ligne dans un tableau, pas créer un Blueprint de plus. Un jeu de survie en compte vite des dizaines : l'autre approche m'aurait enterré.</dd>
+            </div>
+            <div>
+              <dt>Où ça en est</dt>
+              <dd>L'interface est commencée, elle n'est pas terminée. Le déplacement des objets entre les cases, l'empilement et l'utilisation restent à faire. <em>C'est le chantier en cours.</em></dd>
+            </div>
+          </dl>
+      <figure>
+        <div class="fiche__visuel">
+          <img src="../images/blueprints/survie-inventaire.webp" alt="Graphe Blueprint du système : La structure d'objet et la Data Table qui les liste." loading="lazy" width="1200" height="700">
+          <p class="visuel-absent">Capture du graphe à venir</p>
+        </div>
+        <figcaption>
+          <span>La structure d'objet et la Data Table qui les liste.</span>
+          <a class="lien-image" href="../images/blueprints/survie-inventaire.webp">Voir en grand →</a>
+        </figcaption>
+      </figure>
+        </article>
+
+      </div>
+    </section>
+
     <section>
       <h2>Pourquoi j'ai commencé par là</h2>
       <p>
@@ -170,7 +283,7 @@
 
   <div class="enveloppe fiche__suite">
     <span class="etiquette">Projet suivant</span>
-    <a href="serveur-valoria.html">Valoria — serveur PVP faction →</a>
+    <a href="horreur-ps1.html">Jeu d'horreur — style PS1 →</a>
   </div>
 </main>
 

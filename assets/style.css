@@ -349,6 +349,19 @@ img { max-width: 100%; height: auto; display: block; }
   .carte__visuel { border-right: 0; border-bottom: 1px solid var(--trait); min-height: 175px; }
 }
 
+/* --- Groupes de projets sur l'accueil --- */
+.groupe-projets + .groupe-projets { margin-top: clamp(44px, 6vw, 68px); }
+.groupe-projets__titre {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  padding-bottom: 12px; margin-bottom: 22px;
+  border-bottom: 1px solid var(--trait);
+}
+.groupe-projets__titre h3 {
+  font-family: var(--mono); font-size: .78rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--encre);
+}
+.groupe-projets__titre p { font-size: .88rem; color: var(--encre-douce); margin: 0; }
+
 /* 6. FICHES PROJET ------------------------------------------------------ */
 
 .fiche__entete { padding-block: clamp(40px, 7vw, 76px) clamp(28px, 4vw, 44px); }
@@ -470,3 +483,72 @@ figcaption { margin-top: 10px; font: 400 .8rem/1.5 var(--mono); color: var(--enc
   body { background: #fff; color: #000; font-size: 11pt; }
   .carte, .contacts a { break-inside: avoid; }
 }
+
+
+/* 9. BLOCS SYSTÈME (partie technique des fiches UE5) --------------------- */
+
+.systemes { display: flex; flex-direction: column; gap: 22px; margin-top: 26px; }
+
+.systeme {
+  border: 1px solid var(--trait);
+  border-radius: var(--rayon);
+  background: var(--fond-carte);
+  padding: clamp(20px, 3vw, 30px);
+}
+.systeme__entete {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding-bottom: 16px; margin-bottom: 18px;
+  border-bottom: 1px solid var(--trait);
+}
+.systeme__entete h3 {
+  font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+  margin-right: auto; padding-top: 0; border-top: 0;
+}
+
+/* Chaque ligne : une étiquette monospace à gauche, le texte à droite. */
+.systeme__grille { margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.systeme__grille > div { display: grid; grid-template-columns: 178px minmax(0, 1fr); gap: 4px 22px; }
+.systeme__grille dt {
+  font: 500 .7rem/1.5 var(--mono);
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--encre-douce);
+  padding-top: .28em;
+}
+.systeme__grille dd { margin: 0; color: var(--encre); }
+.systeme__grille dd code {
+  font: 400 .88em/1 var(--mono);
+  padding: .18em .4em; border-radius: 4px;
+  background: var(--fond-creux); border: 1px solid var(--trait);
+  color: var(--accent-encre);
+  white-space: nowrap;
+}
+.systeme__grille dd em { color: var(--encre-douce); font-style: italic; }
+
+.systeme figure { margin: 22px 0 0; }
+.systeme .fiche__visuel { min-height: 150px; margin-bottom: 0; }
+.systeme figcaption { display: flex; gap: 8px 16px; flex-wrap: wrap; justify-content: space-between; }
+.lien-image { color: var(--accent-encre); white-space: nowrap; }
+
+@media (max-width: 700px) {
+  .systeme__grille > div { grid-template-columns: 1fr; gap: 3px; }
+  .systeme__grille dt { padding-top: 0; }
+}
+
+/* 10. SECTION UNREAL ENGINE --------------------------------------------- */
+
+.ue5 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px); gap: clamp(28px, 5vw, 56px); align-items: start; }
+.ue5__reperes { display: flex; flex-direction: column; gap: 0; }
+.ue5__reperes > div { padding: 14px 0; border-top: 1px solid var(--trait); }
+.ue5__reperes > div:last-child { border-bottom: 1px solid var(--trait); }
+.ue5__reperes dt { font: 500 .7rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--encre-douce); margin-bottom: 3px; }
+.ue5__reperes dd { margin: 0; color: var(--encre); }
+
+@media (max-width: 860px) {
+  .ue5 { grid-template-columns: 1fr; }
+}
+
+/* Liste à tiret d'accent, réutilisable hors des fiches projet. */
+.liste-fleche { padding-left: 0; list-style: none; margin: 0 0 1.1em; }
+.liste-fleche li { position: relative; padding-left: 26px; margin-bottom: .55em; color: var(--encre-douce); }
+.liste-fleche li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 9px; height: 1px; background: var(--accent); }
+.liste-fleche li strong { color: var(--encre); font-weight: 600; }

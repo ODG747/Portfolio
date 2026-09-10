@@ -139,6 +139,12 @@
   function marquerAbsente(img) {
     var boite = img.closest(".carte__visuel, .fiche__visuel");
     if (boite) { boite.classList.add("sans-image"); }
+    // Un « voir en grand » qui pointe vers un fichier absent ne sert à rien.
+    var figure = img.closest("figure");
+    if (figure) {
+      Array.prototype.forEach.call(figure.querySelectorAll(".lien-image"),
+        function (lien) { lien.hidden = true; });
+    }
   }
 
   Array.prototype.forEach.call(
