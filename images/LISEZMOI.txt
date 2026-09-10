@@ -7,9 +7,7 @@ Le site va chercher exactement ces noms de fichiers :
 
   survie-ue5.webp        → jeu de survie Unreal Engine 5
   horreur-ps1.webp       → jeu d'horreur PS1
-  presentation-3d.webp   → présentation web 3D
   valoria.webp           → serveur Minecraft Valoria
-  oleen.webp             → application OLEEN
 
 ------------------------------------------------------------------
 CAPTURES DE GRAPHES BLUEPRINT  →  images/blueprints/
